@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GardenTools - Магазин садового инвентаря</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Garden<span>Tools</span></h1>
+                        <p>Профессиональный садовый инвентарь</p>
+                    </div>
+                </div>
+                
+                <div class="search-box">
+                    <div class="search-container">
+                        <input type="text" placeholder="Поиск товаров..." class="search-input" id="search-input">
+                        <button class="search-btn" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="search-suggestions"></div>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="action-item">
+                        <a href="#" class="user-link">
+                            <i class="fas fa-user"></i>
+                            <span>Войти</span>
+                        </a>
+                    </div>
+                    <div class="action-item">
+                        <a href="#" class="wishlist-link">
+                            <i class="fas fa-heart"></i>
+                            <span class="wishlist-count">0</span>
+                        </a>
+                    </div>
+                    <div class="action-item">
+                        <a href="cart.html" class="cart-link">
+                            <div class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-counter" id="cart-counter">0</span>
+                            </div>
+                            <div class="cart-info">
+                                <span>Корзина</span>
+                                <span class="cart-total">0 ₽</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="products.html"><i class="fas fa-tools"></i> Товары</a></li>
+                    <li><a href="discounts.html"><i class="fas fa-percentage"></i> Акции</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i> Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Промо баннер -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <span class="banner-badge">-50%</span>
+                    <h2>Весенняя распродажа садового инвентаря</h2>
+                    <p>Скидки до 50% на секаторы, лопаты и системы полива</p>
+                </div>
+                <div class="banner-timer">
+                    <p>До конца акции осталось:</p>
+                    <div class="countdown" id="countdown">
+                        <div class="time-unit">
+                            <span class="number">05</span>
+                            <span class="label">дней</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">12</span>
+                            <span class="label">часов</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">45</span>
+                            <span class="label">минут</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="discounts.html" class="btn btn-banner">Смотреть акции</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Категории -->
+    <section class="quick-categories">
+        <div class="container">
+            <h2 class="section-title">Категории товаров</h2>
+            <div class="categories-grid">
+                <a href="products.html?category=cutting" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Режущий инструмент</h3>
+                        <p>Секаторы, сучкорезы, ножницы</p>
+                    </div>
+                </a>
+                
+                <a href="products.html?category=digging" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-shovel"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Земляные работы</h3>
+                        <p>Лопаты, вилы, грабли</p>
+                    </div>
+                </a>
+                
+                <a href="products.html?category=watering" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Полив</h3>
+                        <p>Шланги, лейки, системы</p>
+                    </div>
+                </a>
+                
+                <a href="products.html?category=storage" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Хранение урожая</h3>
+                        <p>Корзины, тачки, ящики</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные товары -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Популярные товары</h2>
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">Все</button>
+                    <button class="filter-tab" data-filter="new">Новинки</button>
+                    <button class="filter-tab" data-filter="discount">Со скидкой</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="featured-products">
+                <!-- Товары загружаются через JS -->
+            </div>
+            
+            <div class="text-center">
+                <a href="products.html" class="btn btn-view-all">
+                    <i class="fas fa-arrow-right"></i> Все товары
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="advantages">
+        <div class="container">
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h3>Быстрая доставка</h3>
+                        <p>Доставка по Москве за 2 часа</p>
+                    </div>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h3>Гарантия 2 года</h3>
+                        <p>На все товары</p>
+                    </div>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h3>Возврат 30 дней</h3>
+                        <p>Без вопросов</p>
+                    </div>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h3>Поддержка 24/7</h3>
+                        <p>Круглосуточно</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контактная информация -->
+    <section class="contact-info" id="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Телефон</h3>
+                    <p>+7 (499) 350-66-04</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Адрес</h3>
+                    <p>ул. Дубининская, 96, Москва</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Режим работы</h3>
+                    <p>24 часа в сутки</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@gardentools.ru</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <div>
+                            <h3>GardenTools</h3>
+                            <p>Ваш сад - наша забота</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Магазин профессионального садового инвентаря с 2010 года.
+                        Лучшие инструменты для вашего сада.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Категории</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=cutting">Режущий инструмент</a></li>
+                        <li><a href="products.html?category=digging">Земляные работы</a></li>
+                        <li><a href="products.html?category=watering">Полив</a></li>
+                        <li><a href="products.html?category=storage">Хранение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Магазин</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Все товары</a></li>
+                        <li><a href="discounts.html">Акции</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +7 (499) 350-66-04</p>
+                        <p><i class="fas fa-map-marker-alt"></i> ул. Дубининская, 96</p>
+                        <p><i class="fas fa-envelope"></i> info@gardentools.ru</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GardenTools. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно быстрого просмотра -->
+    <div class="modal-overlay" id="quick-view-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-body" id="quick-view-content">
+                <!-- Контент загружается через JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

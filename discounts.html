@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акции и скидки - GardenTools</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/discounts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Garden<span>Tools</span></h1>
+                        <p>Профессиональный садовый инвентарь</p>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <a href="index.html" class="action-item">
+                        <i class="fas fa-home"></i>
+                        <span>Главная</span>
+                    </a>
+                    <a href="products.html" class="action-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Товары</span>
+                    </a>
+                    <a href="cart.html" class="cart-link">
+                        <div class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-counter" id="cart-counter">0</span>
+                        </div>
+                        <div class="cart-info">
+                            <span>Корзина</span>
+                            <span class="cart-total">0 ₽</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="products.html"><i class="fas fa-tools"></i> Товары</a></li>
+                    <li><a href="discounts.html" class="active"><i class="fas fa-percentage"></i> Акции</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="discounts-page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <i class="fas fa-percentage"></i> Акции и скидки
+                </h1>
+                <p class="page-subtitle">Лучшие предложения на садовый инвентарь</p>
+            </div>
+            
+            <!-- Основной баннер акции -->
+            <section class="main-discount-banner">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <span class="discount-tag">-50%</span>
+                        <h2>Весенняя распродажа</h2>
+                        <p>Скидки до 50% на весь ассортимент садового инвентаря</p>
+                        <div class="banner-timer">
+                            <span>До конца акции:</span>
+                            <div class="timer" id="main-timer">
+                                <span class="timer-unit">
+                                    <span class="number">05</span>
+                                    <span class="label">дней</span>
+                                </span>
+                                <span class="timer-unit">
+                                    <span class="number">12</span>
+                                    <span class="label">часов</span>
+                                </span>
+                                <span class="timer-unit">
+                                    <span class="number">45</span>
+                                    <span class="label">минут</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-image">
+                        <img src="images/products/secateur1.jpg" alt="Скидки на садовый инструмент">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Категории со скидками -->
+            <section class="discount-categories">
+                <h2 class="section-title">Категории со скидками</h2>
+                <div class="categories-grid">
+                    <a href="products.html?category=cutting&discount=true" class="discount-category">
+                        <div class="category-icon">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <div class="category-content">
+                            <h3>Режущий инструмент</h3>
+                            <p>Секаторы, сучкорезы, ножницы</p>
+                            <span class="discount-badge">-30%</span>
+                        </div>
+                    </a>
+                    
+                    <a href="products.html?category=digging&discount=true" class="discount-category">
+                        <div class="category-icon">
+                            <i class="fas fa-shovel"></i>
+                        </div>
+                        <div class="category-content">
+                            <h3>Земляные работы</h3>
+                            <p>Лопаты, вилы, грабли</p>
+                            <span class="discount-badge">-25%</span>
+                        </div>
+                    </a>
+                    
+                    <a href="products.html?category=watering&discount=true" class="discount-category">
+                        <div class="category-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="category-content">
+                            <h3>Полив</h3>
+                            <p>Шланги, лейки, системы</p>
+                            <span class="discount-badge">-20%</span>
+                        </div>
+                    </a>
+                    
+                    <a href="products.html?category=storage&discount=true" class="discount-category">
+                        <div class="category-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="category-content">
+                            <h3>Хранение урожая</h3>
+                            <p>Корзины, тачки, ящики</p>
+                            <span class="discount-badge">-15%</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Лучшие предложения -->
+            <section class="best-deals">
+                <div class="section-header">
+                    <h2 class="section-title">Лучшие предложения недели</h2>
+                    <div class="deals-filter">
+                        <button class="filter-btn active" data-filter="all">Все</button>
+                        <button class="filter-btn" data-filter="big">Скидки 30%+</button>
+                        <button class="filter-btn" data-filter="popular">Популярные</button>
+                    </div>
+                </div>
+                
+                <div class="deals-grid" id="deals-grid">
+                    <!-- Предложения загружаются через JS -->
+                </div>
+            </section>
+            
+            <!-- Специальные предложения -->
+            <section class="special-offers">
+                <h2 class="section-title">Специальные предложения</h2>
+                <div class="offers-grid">
+                    <div class="special-offer">
+                        <div class="offer-badge">
+                            <span class="badge-text">Выгода</span>
+                            <span class="badge-value">1+1</span>
+                        </div>
+                        <div class="offer-content">
+                            <h3>Купи секатор - получи перчатки в подарок</h3>
+                            <p>При покупке любого секатора садовые перчатки в подарок</p>
+                            <a href="products.html?category=cutting" class="btn btn-outline">
+                                Выбрать секатор
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="special-offer">
+                        <div class="offer-badge">
+                            <span class="badge-text">Скидка</span>
+                            <span class="badge-value">-15%</span>
+                        </div>
+                        <div class="offer-content">
+                            <h3>При заказе от 3000 ₽</h3>
+                            <p>Скидка 15% на весь заказ при сумме от 3000 рублей</p>
+                            <span class="offer-code">Код: SPRING2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="special-offer">
+                        <div class="offer-badge">
+                            <span class="badge-text">Бесплатно</span>
+                            <span class="badge-value">🚚</span>
+                        </div>
+                        <div class="offer-content">
+                            <h3>Бесплатная доставка</h3>
+                            <p>Бесплатная доставка по Москве при заказе от 2000 ₽</p>
+                            <small>Акция действует до 30 апреля</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Товары с максимальной скидкой -->
+            <section class="max-discounts">
+                <div class="section-header">
+                    <h2 class="section-title">Максимальные скидки</h2>
+                    <a href="products.html?discount=true" class="view-all">
+                        Все товары со скидкой <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="discount-products-slider">
+                    <div class="slider-container" id="discount-slider">
+                        <!-- Слайды загружаются через JS -->
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-btn prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="slider-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Как получить скидку -->
+            <section class="how-to-get">
+                <h2 class="section-title">Как получить скидку</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Выберите товар</h3>
+                            <p>Перейдите в каталог и выберите товар со скидкой</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Добавьте в корзину</h3>
+                            <p>Нажмите кнопку "В корзину" на странице товара</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Оформите заказ</h3>
+                            <p>Перейдите в корзину и заполните данные для заказа</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Получите товар</h3>
+                            <p>Получите заказ с выгодной скидкой</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Контактная информация -->
+            <section class="contact-info">
+                <div class="container">
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <i class="fas fa-phone"></i>
+                            <h4>Консультация по акциям</h4>
+                            <p>+7 (499) 350-66-04</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Адрес магазина</h4>
+                            <p>ул. Дубининская, 96, Москва</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Режим работы</h4>
+                            <p>24 часа в сутки</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-leaf"></i> GardenTools</h3>
+                    <p>Лучшие скидки на садовый инвентарь!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Акционные категории</h3>
+                    <ul>
+                        <li><a href="products.html?category=cutting&discount=true">Режущий инструмент</a></li>
+                        <li><a href="products.html?category=digging&discount=true">Земляные работы</a></li>
+                        <li><a href="products.html?category=watering&discount=true">Полив</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-phone"></i> +7 (499) 350-66-04</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ул. Дубининская, 96, Москва</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GardenTools. Все акции действительны до 30.04.2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

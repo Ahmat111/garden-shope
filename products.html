@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров - GardenTools</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Garden<span>Tools</span></h1>
+                        <p>Профессиональный садовый инвентарь</p>
+                    </div>
+                </div>
+                
+                <div class="search-box">
+                    <div class="search-container">
+                        <input type="text" placeholder="Поиск товаров..." class="search-input" id="search-input">
+                        <button class="search-btn" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <a href="index.html" class="action-item">
+                        <i class="fas fa-home"></i>
+                        <span>Главная</span>
+                    </a>
+                    <a href="cart.html" class="cart-link">
+                        <div class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-counter" id="cart-counter">0</span>
+                        </div>
+                        <div class="cart-info">
+                            <span>Корзина</span>
+                            <span class="cart-total">0 ₽</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="products.html" class="active"><i class="fas fa-tools"></i> Товары</a></li>
+                    <li><a href="discounts.html"><i class="fas fa-percentage"></i> Акции</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="products-page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Каталог садового инвентаря</h1>
+                <p class="page-subtitle">Более 1000 товаров для вашего сада</p>
+            </div>
+            
+            <div class="products-layout">
+                <!-- Сайдбар фильтров -->
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">
+                            <i class="fas fa-filter"></i> Фильтры
+                        </h3>
+                        <button class="clear-filters" id="clear-filters">
+                            <i class="fas fa-times"></i> Сбросить все
+                        </button>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Категории</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="all" checked>
+                                <span class="checkmark"></span>
+                                Все товары
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="cutting">
+                                <span class="checkmark"></span>
+                                Режущий инструмент
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="digging">
+                                <span class="checkmark"></span>
+                                Земляные работы
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="watering">
+                                <span class="checkmark"></span>
+                                Полив
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="storage">
+                                <span class="checkmark"></span>
+                                Хранение
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Цена, ₽</h4>
+                        <div class="price-filter">
+                            <div class="price-inputs">
+                                <input type="number" id="min-price" placeholder="0" min="0">
+                                <span>-</span>
+                                <input type="number" id="max-price" placeholder="100000" min="0">
+                            </div>
+                            <input type="range" class="price-slider" min="0" max="100000" value="100000">
+                            <button class="btn btn-sm" id="apply-price">Применить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Наличие</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="stock" value="in-stock" checked>
+                                <span class="checkmark"></span>
+                                В наличии
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="stock" value="preorder">
+                                <span class="checkmark"></span>
+                                Под заказ
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Скидки</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="discount" value="yes">
+                                <span class="checkmark"></span>
+                                Только со скидкой
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Бренды</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="fiskars">
+                                <span class="checkmark"></span>
+                                Fiskars
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="gardena">
+                                <span class="checkmark"></span>
+                                Gardena
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="wolf-garten">
+                                <span class="checkmark"></span>
+                                Wolf-Garten
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Основной контент -->
+                <div class="products-main">
+                    <div class="products-header">
+                        <div class="sort-controls">
+                            <span>Сортировка:</span>
+                            <select class="sort-select" id="sort-select">
+                                <option value="default">По умолчанию</option>
+                                <option value="price-asc">По возрастанию цены</option>
+                                <option value="price-desc">По убыванию цены</option>
+                                <option value="name-asc">По названию (А-Я)</option>
+                                <option value="name-desc">По названию (Я-А)</option>
+                                <option value="discount">По размеру скидки</option>
+                            </select>
+                        </div>
+                        
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                            <span class="products-count" id="products-count">0 товаров</span>
+                        </div>
+                    </div>
+                    
+                    <div class="products-container" id="products-container">
+                        <!-- Товары загружаются через JS -->
+                    </div>
+                    
+                    <div class="pagination" id="pagination">
+                        <button class="page-btn prev" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="page-numbers">
+                            <span class="page-number active">1</span>
+                            <span class="page-number">2</span>
+                            <span class="page-number">3</span>
+                        </div>
+                        <button class="page-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-leaf"></i> GardenTools</h3>
+                    <p>Качественный садовый инвентарь с доставкой по Москве.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="products.html?category=cutting">Режущий инструмент</a></li>
+                        <li><a href="products.html?category=digging">Земляные работы</a></li>
+                        <li><a href="products.html?category=watering">Полив</a></li>
+                        <li><a href="products.html?category=storage">Хранение урожая</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-phone"></i> +7 (499) 350-66-04</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ул. Дубининская, 96, Москва</p>
+                    <p><i class="fas fa-clock"></i> 24 часа в сутки</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GardenTools. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина покупок - GardenTools</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Garden<span>Tools</span></h1>
+                        <p>Профессиональный садовый инвентарь</p>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <a href="index.html" class="action-item">
+                        <i class="fas fa-home"></i>
+                        <span>Главная</span>
+                    </a>
+                    <a href="products.html" class="action-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Товары</span>
+                    </a>
+                    <a href="cart.html" class="cart-link active">
+                        <div class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-counter" id="cart-counter">0</span>
+                        </div>
+                        <div class="cart-info">
+                            <span>Корзина</span>
+                            <span class="cart-total">0 ₽</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <i class="fas fa-shopping-cart"></i> Корзина покупок
+                </h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a>
+                    <span>/</span>
+                    <span>Корзина</span>
+                </div>
+            </div>
+            
+            <div class="cart-layout">
+                <div class="cart-content">
+                    <!-- Уведомление о пустой корзине -->
+                    <div class="empty-cart" id="empty-cart">
+                        <div class="empty-cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h2>Ваша корзина пуста</h2>
+                        <p>Добавьте товары из каталога, чтобы сделать заказ</p>
+                        <a href="products.html" class="btn btn-primary">
+                            <i class="fas fa-tools"></i> Перейти в каталог
+                        </a>
+                    </div>
+                    
+                    <!-- Список товаров в корзине -->
+                    <div class="cart-items-section" id="cart-items-section">
+                        <div class="cart-items-header">
+                            <h3>Товары в корзине</h3>
+                            <button class="clear-cart" id="clear-cart">
+                                <i class="fas fa-trash"></i> Очистить корзину
+                            </button>
+                        </div>
+                        
+                        <div class="cart-items" id="cart-items">
+                            <!-- Товары загружаются через JS -->
+                        </div>
+                        
+                        <div class="cart-actions">
+                            <a href="products.html" class="btn btn-outline">
+                                <i class="fas fa-arrow-left"></i> Продолжить покупки
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Боковая панель заказа -->
+                <aside class="order-summary" id="order-summary">
+                    <div class="summary-header">
+                        <h3>
+                            <i class="fas fa-receipt"></i> Итого к оплате
+                        </h3>
+                    </div>
+                    
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Товаров:</span>
+                            <span id="total-items">0 шт.</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Сумма:</span>
+                            <span id="subtotal">0 ₽</span>
+                        </div>
+                        <div class="summary-row discount">
+                            <span>Скидка:</span>
+                            <span id="discount-amount">-0 ₽</span>
+                        </div>
+                        <div class="summary-row delivery">
+                            <span>Доставка:</span>
+                            <span id="delivery-cost">0 ₽</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Итого:</span>
+                            <span id="total-price">0 ₽</span>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-code">
+                        <h4>
+                            <i class="fas fa-tag"></i> Промокод
+                        </h4>
+                        <div class="promo-input">
+                            <input type="text" placeholder="Введите промокод" id="promo-input">
+                            <button class="btn btn-sm" id="apply-promo">Применить</button>
+                        </div>
+                        <div class="promo-suggestions">
+                            <span class="promo-hint">Популярные промокоды:</span>
+                            <button class="promo-suggestion" data-code="SPRING2024">SPRING2024 (-10%)</button>
+                            <button class="promo-suggestion" data-code="FIRSTORDER">FIRSTORDER (-5%)</button>
+                        </div>
+                    </div>
+                    
+                    <div class="delivery-options">
+                        <h4>
+                            <i class="fas fa-truck"></i> Доставка
+                        </h4>
+                        <div class="delivery-options-list">
+                            <label class="delivery-option">
+                                <input type="radio" name="delivery" value="pickup" checked>
+                                <span class="radio-checkmark"></span>
+                                <div class="option-content">
+                                    <span class="option-title">Самовывоз</span>
+                                    <span class="option-price">Бесплатно</span>
+                                    <span class="option-desc">ул. Дубининская, 96, Москва</span>
+                                </div>
+                            </label>
+                            <label class="delivery-option">
+                                <input type="radio" name="delivery" value="courier">
+                                <span class="radio-checkmark"></span>
+                                <div class="option-content">
+                                    <span class="option-title">Курьер по Москве</span>
+                                    <span class="option-price">300 ₽</span>
+                                    <span class="option-desc">Доставка за 2 часа</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-block" id="checkout-btn">
+                        <i class="fas fa-lock"></i> Перейти к оформлению
+                    </button>
+                    
+                    <div class="payment-methods">
+                        <span>Принимаем к оплате:</span>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-mir"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+            <!-- Форма оформления заказа -->
+            <div class="checkout-form" id="checkout-form">
+                <h2 class="section-title">Оформление заказа</h2>
+                
+                <form id="order-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i> ФИО *
+                            </label>
+                            <input type="text" id="name" required placeholder="Иванов Иван Иванович">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i> Телефон *
+                            </label>
+                            <input type="tel" id="phone" required placeholder="+7 (999) 999-99-99">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email *
+                            </label>
+                            <input type="email" id="email" required placeholder="ivan@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">
+                                <i class="fas fa-map-marker-alt"></i> Адрес доставки
+                            </label>
+                            <input type="text" id="address" placeholder="ул. Примерная, д. 1, кв. 1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">
+                            <i class="fas fa-comment"></i> Комментарий к заказу
+                        </label>
+                        <textarea id="comment" rows="3" placeholder="Дополнительные пожелания..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="back-to-cart">
+                            <i class="fas fa-arrow-left"></i> Вернуться в корзину
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-check"></i> Подтвердить заказ
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Контактная информация -->
+            <div class="contact-info">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Нужна помощь?</h4>
+                        <p>+7 (499) 350-66-04</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Режим работы</h4>
+                        <p>24 часа в сутки</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Адрес</h4>
+                        <p>ул. Дубининская, 96, Москва</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-leaf"></i> GardenTools</h3>
+                    <p>Быстрая доставка садового инвентаря по Москве.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="products.html?category=cutting">Секаторы</a></li>
+                        <li><a href="products.html?category=digging">Лопаты</a></li>
+                        <li><a href="products.html?category=watering">Полив</a></li>
+                        <li><a href="products.html?category=storage">Тачки и корзины</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-phone"></i> +7 (499) 350-66-04</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GardenTools. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
